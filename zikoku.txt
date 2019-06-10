@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ƒTƒ“ƒvƒ‹</title>
+<title>ï¿½Tï¿½ï¿½ï¿½vï¿½ï¿½</title>
 <script>
 window.onload = function() {
   setInterval(function() {
@@ -12,6 +12,6 @@ window.onload = function() {
 </script>
 </head>
 <body>
-<div id="T1"></div>
+<div id="T1"></div> <!-- henko shimashita -->
 </body>
 </html>
