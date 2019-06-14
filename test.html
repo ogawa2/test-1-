@@ -53,7 +53,141 @@
 
                 document.write(a + b + "<br>");
                 document.write("田中")
+
+                //レッスン9（インクリメント）
+                //インクリメントa++ デクリメントa--
+                var a = 10;
+                a++;
+                document.write("<br>"+a);
+                a--;
+                document.write("<br>"+a);
+                var a = 8;
+                var b = a++;
+                document.write("<br>"+b);
+                document.write("<br>"+a+"<br>");
+                
+
+                //レッスン１０（論理判定）
+                /*等しいか　＝＝
+                　等しくないか　！＝
+                　大きいか、小さいか　＜＞
+                　以上か、以下か＞＝、＜＝
+                  trueかfalseで返ってくる
+                */
+
+                var a,b,c;
+                a = 10; b= 11;
+                c = (a == b);
+                document.write(c+"<br>");
+
+                c = (a < b);
+                document.write(c+"<br>");
+                c = (a >= b);
+                document.write(c+"<br>");
+                c = (a != b);
+                document.write(c+"<br>");
+                document.write((a == b)+"<br>")
+
+                //レッスン１１（If文）
+                /*
+                If文
+
+                if(条件判定)
+                {条件がtrueであれば実行する}
+                
+                Else文
+                         
+                if（条件判定）
+                {条件がtrueであれば実行する}
+                
+                else
+                {条件がfalseであれば実行する}
+
+                Else if文
+                
+                if(条件判定１)
+                {条件がtrueなら実行}
+                else if(条件判定２)　 else if はいくつでも追加できる
+                {条件がfalseなら実行}
+                else　　　　　　　　　どの条件にも当てはまらなかった場合実行される
+                {どの条件にも当てはまらなければ実行}
+                */
+
+                var a,b;
+                a=7; b=10;
+
+                if(a>b)
+                {
+                   document.write("aが大きい")
+                }
+                else if(a == b)
+                {
+                    document.write("aと等しい")
+                }
+                else
+                {
+                    document.write("aが小さい")
+                }
+                
+                document.write("<br>")
+
+
+                //レッスン11(Switch case文)　処理を分岐する
+
+                var a = 10;
+                switch(a)
+                {
+                    case 4:
+                      document.write("値は４です");
+                      break;
+                    case 5:
+                      document.write("値は５です");
+                      break;
+                    case 10:
+                      document.write("値は１０です");
+                      break;
+                    default:
+                      document.write("どれにも該当しませんでした")  
+
+                      
+                }
+                //レッスン12(Whileループ)
+                /*while(条件式)
+                ｛
+                　　繰り返し処理；
+                　　カウント処理；　　
+                ｝*/
+                document.write("<br>");
+                var a = 1;
+                while(a < 5)
+                {
+                  document.write(a + "<br>");
+                  a++;
+                }
             
+
+
+
+
+
+
+
+                
+
+
+            
+
+
+
+
+            
+
+
+
+
+
+            
+            　　
 
 
             
