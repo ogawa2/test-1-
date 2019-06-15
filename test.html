@@ -132,7 +132,7 @@
                 document.write("<br>")
 
 
-                //レッスン11(Switch case文)　処理を分岐する
+                //レッスン12(Switch case文)　処理を分岐する
 
                 var a = 10;
                 switch(a)
@@ -151,7 +151,7 @@
 
                       
                 }
-                //レッスン12(Whileループ)
+                //レッスン13(Whileループ)
                 /*while(条件式)
                 ｛
                 　　繰り返し処理；
@@ -164,7 +164,111 @@
                   document.write(a + "<br>");
                   a++;
                 }
-            
+
+                //レッスン14（do whileループ）
+                /*do
+                {
+                  処理；
+                  カウント処理；
+                }while(a < 10);
+                条件に関係なく１回は必ず実行される*/
+
+                var a = 1;
+
+                while(a < 5)
+                {
+                  document.write(a+"<br>");
+                  a++;
+                }
+                a = 3;
+                do
+                {
+                  document.write(a+"<br>");
+                  a++;
+                }while(a < 10);
+                
+                //レッスン１５（Forループ）
+                /*for(初期化処理； 条件判定； インクリメント)
+                {
+                  繰り返し処理；
+                }
+                */
+
+                for(var b = 0; b<5; b++)
+                {
+                  document.write("<br>"+b)
+                }
+                
+                //レッスン16（For in ループ）
+                /*オブジェクトのプロパティに繰り返し処理したい場合に便利
+                for(var pname in obj)
+                {
+                  繰り返し処理；
+                }
+                */
+
+                for(var p in document)
+                {
+                  document.write(p+"<br>")
+                }
+
+                //レッスン１７（ループコントロール）
+
+                /*ループを抜ける　break;
+                  ループを一回飛ばす,スキップする　continue;
+                */
+
+                for(var b = 0; b<5; b++)
+                {
+                  if(b === 2)break; //もしbが2であれば（true）ループ終了。continueはbが２であれば２だけ
+                  document.write(b+"<br>");
+                }
+
+                //レッスン１８（ファンクション）
+
+                /*function 関数名（引数）
+                ｛
+                　処理を記述；
+                ｝
+                関数を呼び出す
+                関数名（引数）；
+                */
+
+              　function kansumei(a) //
+              {
+                document.write(a+"<br>")
+              }
+                kansumei("hello");
+                kansumei(5);
+
+                //レッスン19（配列）
+                /*変数が複数個連なったもの　インデックスで管理できる
+                配列オブジェクト
+                va a = ["A","B","c"];
+                a[0];
+                for inループが使える
+                配列を操作するたくさんのファンクション*/
+
+                var a = ["鈴木","田中","佐藤"];
+
+                a[0] = "渡辺";　//個々の値を変更
+                document.write(a[0]);
+
+                for(i in a)
+                {
+                  document.write(a[i]+"<br>")
+                }
+                document.write(a+"<br>")
+                
+
+
+
+              
+
+
+                
+
+
 
 
 
