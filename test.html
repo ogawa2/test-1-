@@ -274,7 +274,93 @@
                 document.write(a+"<br>")
                 //git hub と　slack 連携できたかテストプッシュ
 
+                //レッスン20（連想配列）個々の配列に名前を付けられる
+
+                var a = {"鈴木":"大阪府大阪市・・","田中":"東京都台東区・・・","佐藤":"愛知県名古屋市・・・"};
+                for(key in a)
+                {
+                  document.write(key + ":"+a[key]+"<br>");
+                }
+
+                //レッスン21（ダイアログボックス）
+                /*警告メッセージ　alerat("表示文")　
+                確認メッセージ　confirm("表示文");
+                var result = confirm("削除しますか？")
+                入力ダイアログボックス
+                prompt("表示文");
+                var name  = prompt("名前を入力してください");
+                 */
+                 alert("アラートです");
+                var result = confirm("削除しますか的な？");
+                if(result)
+                {
+                  alert("OKですね");
+                }
+                var name = prompt("名前を入力してください");
+                alert(name+"さん　こんにちは");
+
+                //レッスン22（戻り値ファンクション）
+                /*function ファンクション名（引数）
+              ｛
+              　　return 戻り値;
+                ｝
+                var a = ファンクション（引数）;
+
+                */
+
+                function hoge(x,y)
+                {
+                  return x + y;
+                }
+                document.write(hoge(8,200)); 
+
+                //レッスン２３（複数条件）
+                /* かつ　&&   または　||
+                */
+
+                var a = 3;
+                var b = 2;
+                
+                if((a >2)&&(b > 1))
+                {
+                  document.write("<br>"+"両方条件を満たしている");
+
+                }
+                if((a >2)||(b > 3))
+                {
+                  document.write("<br>"+"片方条件を満たしている");
+
+                }
+                //レッスン２４（イベント）　マウスクリックなどのイベント処理
+                /*古いやり方　
+                マウスクリック　onclick=""
+                ダブルクリック　ondblclick=""
+                マウスオーバー　onkouseover=""
+                新しいやり方
+                イベントリスナー
+                */
+                function push()
+                {
+                  alert("ボタン押しました");
+                }
+                //レッスン25（オブジェクト）データをひとまとめにして管理しやすくする
+                /*
+                人（名前、性別、生年月日、住所、メールアドレス）
+                オブジェクト作成（newで作成する）
+                var person = new Object();   Oは大文字
+                オブジェクトのメンバー（プロパティ）にアクセス
+                */
+
+                var person = new Object();
+                
+                person.name = "田中";
+                person.address = "東京都台東区・・・";
+                person.email = "tanaka@tanaka.com";
+
+                document.write(person.address);
+                
                 </script>
+                　<input type="button" value="push me" onclick="push()">
             </body>
         </html>
         
