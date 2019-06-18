@@ -5,6 +5,7 @@
             </head>
             <body>
         　　　　 <script>
+          /*
                //レッスン２（基本文法）
                 document.write("Hello、こんにちは")
                 //コメント練習
@@ -350,6 +351,7 @@
                 var person = new Object();   Oは大文字
                 オブジェクトのメンバー（プロパティ）にアクセス
                 */
+                /*
 
                 var person = new Object();
                 
@@ -358,6 +360,118 @@
                 person.email = "tanaka@tanaka.com";
 
                 document.write(person.address);
+
+                */
+                //レッスン26（オブジェクトプロトタイプ）
+
+
+                /*function person(name,email)
+                {
+                  this.name = name;
+                  this.email = email;
+                }
+                var tanaka = new person("田中","tanaka@hoge.hoge");
+                */
+               /*
+                function person(name,email)
+                {
+                  this.name = name;
+                  this.email = email;
+                }
+                var tanaka = new person("田中","東京都台東区・・・");
+                document.write("<br>"+tanaka.name)
+                */
+
+                //レッスン27（無名関数）
+                /*名前のない関数
+                var greet = function(){ alert("hello";)};
+                変数にファンクションを代入できる
+                変数名で呼び出せる
+                greet();
+                オブジェクトのメンバーにできる
+                person.greet ~ function(){alert("hello");};
+                document.write()
+                */
+                /*
+                var greet = function(){alert("どうも");}
+
+                greet();
+                */
+                /*
+                var person = new Object();
+                person.name = "吉田";
+                person.email = "茨城県牛久市";
+                person.greet = function()
+                {
+                  alert("やあ、こんにちは");
+                }
+                
+                person.greet();
+                */
+                
+                //レッスン28(mathオブジェクト)
+                /*数学に関するファンクションがまとめられている
+                abs round ceil floor max min random sin cos tan sqrt pow log exp
+                使い方
+                math.round(3.55);
+                */
+                document.write("<br>"+Math.round(2.335));
+                document.write("<br>"+Math.floor(2.335)+"<br>");
+
+                //レッスン29（stringオブジェクト）
+                /*
+                文字列操作のオブジェクトがまとめられている
+                */
+                /*
+                var c = "鈴木一郎";
+                var c = new String("鈴木一郎"); //この行と一つ上の行は同じことをやっている
+                var count = c.length;
+                document.write(count)
+                */
+                var count = "suzuki".length; 
+                document.write(count);
+
+                //レッスン30（Array（配列）オブジェクト）
+                /*
+                配列操作に関するファンクションがまとめられている
+                length tostring() concat join slice pop push shift unshift revers sort など。 
+                */
+                /*
+                var b = [2,5,3,99,23,55,21];
+                var count = b.length;
+                document.write("<br>"+count);
+                b.pop(); //最後の要素を削除する
+                document.write("<br>"+b)
+                b.push(19); //要素を一つ追加する
+                document.write("<br>"+b);
+                b.reverse(); //要素を逆向きに並び替える
+                document.write("<br>"+b);
+                */
+                var b = new Array(2,5,3,99,23,55)
+                b.reverse(); //要素を逆向きに並び替える
+                document.write("<br>"+b+"<br>");
+
+                //レッスン31(dateオブジェクト)
+                /*
+                日付に関するオブジェクトがまとめられている
+                */
+                var c = new Date();
+                document.write(c.getFullYear()+"/"+(c.getMonth()+1)+"/"+c.getDate());
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
                 
                 </script>
                 　<input type="button" value="push me" onclick="push()">
