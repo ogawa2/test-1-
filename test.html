@@ -4,6 +4,16 @@
                
             </head>
             <body>
+              <form>
+                <input type="text" name="username"/>
+                <input type="text" name="email"/ >
+              </form>
+
+              <p id="myid"></p>
+              <p class="hoge">javascript</p>
+              <p class="hogehoge">PHP</p>
+              <p class="hoge">java</p>
+
         　　　　 <script>
           /*
                //レッスン２（基本文法）
@@ -458,23 +468,113 @@
                 var c = new Date();
                 document.write(c.getFullYear()+"/"+(c.getMonth()+1)+"/"+c.getDate());
 
+                //レッスン３２（ページリダイレクト）
+                /*
+                windowオブジェクトのlocationを使用する
+                window.location = "http//google.com"
+                */
+                  function newlocation()
+                  {
+                    window.location = "http://google.co.jp";
+                  }
+
+                  //レッスン33（クッキー）
+                  /*
+                  クッキーの取り扱い
+                  document.cookie = "data1=124";
+                  プロパティ
+                  path domain max-age (クッキーの有効期限　秒数で指定。設定なしはブラウザ終了時に削除)
+                  expires(クッキーの有効期限　日付で指定　指定なしはブラウザ終了時に削除)
+                  secure
+                  クッキーの削除方法
+                  有効期限に過去の日付を入れる
+                  window.cookie = "email=; max-age=0";
+                  エンコード
+                  encodeURIComponent(data);
+                  クッキーの読み出し
+                  var a = dociment.cookie;
+                  var b = a.split(';');
+                  for(p in b)
+                  {
+                    var c = b[p].split('=');
+                    document.write(c[0]+"="+c[1])+"<br>");
+                  }
+
+                  */
+                  navigator.cookieEnabled
+
+                  document.cookie = 'name=tanaka'
+                  document.cookie = 'email=tanaka@tanaka.com'; 
+                  document.cookie = 'cookie_name=' + encodeURIComponent('outlet shoes');  
+
+                  //レッスン34(DOM)
+                  /*
+                  document Object Model                  
+                  */
+                  for(p in window.location)
+                  {
+                    var key = p;
+                    var value = window.location[p];
+                    document.write(key + ":" + value +"<br>")
+                    
+                  }
+
+                  //レッスン35(getElementbyid)
+                 /*IDによってエレメントを取得する
+                  var elem = document.getElementById("myid");
+                  elem.innerHTML = "HEllo there!";
+                  スタイルの変更
+                  elem.style = ""color:red"; 
+                  エレメントはスクリプトの前に存在しなければならない
+                  scriptタグはbodyの一番最後に書くのが良い
+                  */
+
+                  var elem = document.getElementById("myid")
+                  elem.innerHTML = "<strong>hello there!</strong>";
+                  elem.style = "color:red";
+
+                  //getElementByName 名前によってエレメントを取得
+                  /*var e = socument.getElementByName('username')
+                  配列で返ってくる
+                  e[0]といった形でアクセスする
+                  内容の変更
+                  value = "";
+                  スタイルの変更
+                  style = "background-color:#f5f5dc";
+                  */
+                  var e = document.getElementsByName('username')
+                  e[0].value = "田中太郎";
+                  e[0].style = "background-color:#f5f5dc";
+
+                  //レッスン37（getElementClassName）
+                  /*
+                  クラスによってエレメントを取得
+                  var = document.getElementByClassName('hoge')
+                  配列で返ってくる
+                  e[0].style.display = "none";
+                  全部に適用したい場合はループ処理
+                  for(i in e)
+                  {
+                    e[i].style.color = "red";
+                  }
+
+                  */
+                  var e = document.getElementsByClassName("hoge")
+                  e[0].style.color = "red"
+                  e[1].style.color = "blue";
+
+                  for(i in e)
+                  {
+                    e[i].style.fontWeight = "900";
+                  }
 
 
 
 
-
-
-
-                
-
-
-
-
-
-
-                
                 </script>
                 　<input type="button" value="push me" onclick="push()">
+
+                  <input type = "button" value = "click me" onclick="newlocation()"/>
             </body>
         </html>
         
