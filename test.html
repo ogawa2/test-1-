@@ -545,6 +545,7 @@
                   var e = document.getElementsByName('username')
                   e[0].value = "田中太郎";
                   e[0].style = "background-color:#f5f5dc";
+                  e[0].setAttribute("foo","100");
 
                   //レッスン37（getElementClassName）
                   /*
@@ -562,11 +563,32 @@
                   var e = document.getElementsByClassName("hoge")
                   e[0].style.color = "red"
                   e[1].style.color = "blue";
+                  e[0].innerHTML = "python";
+                  e[0].setAttribute("foo","100");
 
                   for(i in e)
-                  {
-                    e[i].style.fontWeight = "900";
+                  /*{
+                    e[i].style.fontWeight="900";
                   }
+                  //エレメントオブジェクト
+                  /*
+                  Element Objectのメンバー
+                  */
+                  e[0].setAttribute("foo","100");
+                  e[0].innerHTML = "python";
+
+                  //イベントリスナー
+                  /*
+                  別ファイルに処理をまとめられる
+                  イベントを登録する、同一イベントに複数の処理を登録することも可能
+                  addEventListener(イベント、呼び出すファンクション名,false,false)
+                  イベントを削除
+                  removeEventListener
+                  ドキュメントにLoadイベントを登録
+                  document.addEventListener("load",hoge,false)
+                  */
+                  
+
 
 
 

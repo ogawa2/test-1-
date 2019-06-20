@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+        <html lang="ja">
+            <head>
+              <meta charset="UTF-8">
+              <title>test2</title>
+               
+            </head>
+            <body>
+                <p class="hoge">javascript</p>
+                <p class="hogehoge">PHP</p>
+                <p class="hoge">java</p>
+
+                <input type="button" value="MoveRight" onclick="MoveRight()"/>
+
+
+
+            <script type="text/javascript" src="test2.js">
+            //レッスン40（デバッグ）
+            /*
+            バグを取り除くこと
+            choromeでデバッグできる。
+            ブレイクポイント
+            指定したポイントで処理を止めてくれる
+            コンディションブレイクポイント
+            指定した条件の時だけ処理を止めてくれる
+            call stack
+            呼び出された経過      
+            watch      
+            */  
+           
+            //レッスン41（アニメーションの基礎）
+            /*
+            Style.leftの値を設定して動かす
+            parseInt
+            文字列を整数に変換する
+            style.leftは文字列で設定
+            e.style.left = parseInt(e.style.left) + 10 + 'px';
+            */
+
+
+           
+           
+
+            </script>
+            
+            <script>
+               keisan1();
+
+               var e = document.getElementsByClassName('hoge');
+               e[0].style.position = 'relative';
+               e[0].style.left = '0px';
+
+               function MoveRight()
+               {
+                 e[0].style.left = parseInt(e[0].style.left) + 10 + 'px';
+               }
+                
+              
+            </script>
+
+            </body>
+        </html>
+        
