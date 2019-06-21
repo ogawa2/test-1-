@@ -10,7 +10,8 @@
                 <p class="hogehoge">PHP</p>
                 <p class="hoge">java</p>
 
-                <input type="button" value="MoveRight" onclick="MoveRight()"/>
+                <input type="button" value="MoveRight" onclick="SetAnime()"/>
+                <input type="button" value="stop" onclick="stop()"/>
 
 
 
@@ -36,23 +37,65 @@
             style.leftは文字列で設定
             e.style.left = parseInt(e.style.left) + 10 + 'px';
             */
+             //レッスン42（setTimeout）
+                  /*
+                  指定ミリ秒後に指定したファンクションを呼び出す　
+                  アニメーションに使用できる
+                  setTimeout
+                  setTimeout( function, duration)
+                  SetTimeoutを解除
+                  /* 
+             //レッスン４３SetInterval
+             タイマー関数
+             指定したミリ秒ごとに指定したファンクションを呼び出す
+             setInterve(ファンクション名,ミリ秒)
+             clearIntervalz(var)   
+             
+             //レッスン44（即時関数）
+             関数を定義すると同時に実行する
+             関数に名前がない　無名関数との違いは実行するかしないか
+             基本構文
+             (function ()
+             {
 
+             }());
+             引数を渡すバージョン
+             (function(p1,p2)
+             {
 
-           
-           
-
-            </script>
+             }('hoge','foo'));
+             
+             </script>
             
             <script>
+               document.write((function(a,b)
+               {
+                 return a + b;
+               })(20,30)+"<br>");             
+               
+               
                keisan1();
 
                var e = document.getElementsByClassName('hoge');
                e[0].style.position = 'relative';
                e[0].style.left = '0px';
 
+               var st;
+
+               function SetAnime()
+               {
+                 st = setInterval(MoveRight,20);
+               }
+
                function MoveRight()
                {
-                 e[0].style.left = parseInt(e[0].style.left) + 10 + 'px';
+                 e[0].style.left = parseInt(e[0].style.left) + 1 + 'px';
+
+                 //st = setTimeout(MoveRight,100);
+               }
+               function stop()
+               {
+                 clearInterval(st)
                }
                 
               
