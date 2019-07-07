@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>React Practice</title>
+    <link rel="stylesheet" href="css/styles.css" >
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        (() => {
+            const name = 'taguchi';
+            ReactDOM.render(
+                //<p>Hello! {name.toUpperCase()}</p>, これはOK
+                //<p>Hello</p><p>world</p>,　これは２つ要素があるからエラーになる
+                <div> 
+                 <p>Hello</p>
+                 <hr/>  
+                 <p>world</p>　
+                </div>,
+                //↑はdivで括って要素を一つ扱いにしてるのでOK。<hr>など閉じタグのないタグは/をつける。
+                document.getElementById('root')
+            );
+        })();
+    </script>
+</body>
+</html>

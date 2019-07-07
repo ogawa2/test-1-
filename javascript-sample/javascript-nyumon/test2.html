@@ -68,7 +68,7 @@
              </script>
             
             <script>
-               document.write((function(a,b)
+               /*document.write((function(a,b)
                {
                  return a + b;
                })(20,30)+"<br>");             
@@ -96,11 +96,33 @@
                function stop()
                {
                  clearInterval(st)
-               }
+               }*/
+
+
+                // 関数を2回実行する関数！！
+                  function doTwice(x) {
+                  x(); // 1回目！
+                  x(); // 2回目！
+                 }               
+
+                  // あいさつを2回実行する
+                doTwice(function() {
+                 document.write('Hello!');
+                  });
+
+                  
+
+                  
+
+                 /*var e = function() {
+                 document.write('oraora!');
+                 };
+                 
+                 document.write(e());
+               */
                 
               
             </script>
-
             </body>
         </html>
         
