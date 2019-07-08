@@ -12,18 +12,27 @@
     <div id="root"></div>
     <script type="text/babel">
         (() => {
-            const name = 'taguchi';
+
+            function showMessage(){
+                alert('Helo');
+            }
+            
             ReactDOM.render(
-                //<p>Hello! {name.toUpperCase()}</p>, これはOK
-                //<p>Hello</p><p>world</p>,　これは２つ要素があるからエラーになる
-                <div> 
-                 <p>Hello</p>
-                 <hr/>  
-                 <p>world</p>　
-                </div>,
-                //↑はdivで括って要素を一つ扱いにしてるのでOK。<hr>など閉じタグのないタグは/をつける。
+               //<div className="box"></div>,
+               <div style={{width:100, height:100, backgroundColor:'tomato'}}
+               onClick={showMessage}></div>,
                 document.getElementById('root')
             );
+            /*onClick={showMessage}←ここで注意点があって HTML と同じようにここに showMessage と書くと、実は上手くいかなかったりします。
+            2:04
+            見てあげると…、こうですね、関数を渡してほしいのに String 型が来てしまっているよ、となっています。
+            2:13
+            これはダブルクォーテーションで囲うと文字列になってしまうからですね。
+            2:18
+            従って JavaScript の式は、波括弧の式で渡さなくてはいけないので、 {"showMessage"} と書けば良いのかと思いきや…、ダブルクォーテーションと同時には指定できないので、波括弧だけで書いてあげる必要があります。
+            2:31
+            したがって {showMessage} と書いてあげましょう。*/
+
         })();
     </script>
 </body>

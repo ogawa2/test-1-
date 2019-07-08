@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>React Practice</title>
+    <link rel="stylesheet" href="css/styles.css" >
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        (() => {
+
+            function Counter(props) {
+                
+                //function countUp(x){
+                //    alert(x);
+                //}
+                function countUp(e, x){
+                    e.preventDefault();
+                    alert(x);
+                }
+
+                //return( <li style={{backgroundColor:props.color}} onClick={() =>
+                // countUp(props.color)}>
+                //         押してね
+                //        </li>
+                return( <li style={{backgroundColor:props.color}}>
+                            <a href="#" onClick={(e) => countUp(e, props.color)}>
+                                押してね
+                            </a>
+                        </li>
+                );
+            }
+            
+            ReactDOM.render(
+              <div className="container">  
+                <ul>
+                <Counter　color="tomato"/>
+                <Counter　color="skyblue"/>
+                <Counter  color="limegreen"/>
+                </ul>
+                
+              </div>,             
+                document.getElementById('root')
+            );
+            
+        })();
+    </script>
+</body>
+</html>
