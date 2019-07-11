@@ -14,15 +14,15 @@
         (() => {
 
             function Counter(props) {
-                return <li style={{backgroundColor:props.color}}>0</li>;
+                return <li style={{backgroundColor:props.x}}>0{props.x}</li>;
             }
             
             ReactDOM.render(
               <div className="container">  
                 <ul>
-                <Counter　color="tomato"/>
-                <Counter　color="skyblue"/>
-                <Counter  color="limegreen"/>
+                <Counter　x="tomato"/>
+                <Counter　x="skyblue"/>
+                <Counter  x="limegreen"/>
                 </ul>
               </div>,             
                 document.getElementById('root')

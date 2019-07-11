@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Practice</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: skyblue;
+      cursor: pointer;
+      transition: 0.8s;
+    }
+    .circle {
+      background: pink;
+      border-radius: 50%;
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+  <div id="target1" class="box"></div>
+  <div id="target2" class="box"></div>
+  <div id="target3" class="box"></div>
+
+  <script>
+    'use strict';
+
+    const target = document.getElementById('target');
+
+    target.addEventListener('click', function() {
+        target.classList.toggle('circle');
+    });
+  </script>
+</body>
+</html>

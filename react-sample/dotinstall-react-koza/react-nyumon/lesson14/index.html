@@ -18,19 +18,15 @@
           super(props);
           this.state = {
             count: 0
-          };
-          this.countUp = this.countUp.bind(this);
+           };
+           this.countUp = this.countUp.bind(this);
         }
-        countUp() {
-          // this.state.count = this.state.count + 1;
-          // this.setState({
-          //   count: this.state.count + 1
-          // });
+        countUp(){
           this.setState(prevState => {
-            return {
-              count: prevState.count + 1
-            };
-          });
+              return{
+                count: prevState.count + 1
+              };              
+            });
         }
         render() {
           return (
@@ -41,14 +37,34 @@
         }
       }
 
-      ReactDOM.render(
-        <div className="container">
+      class App extends React.component{
+        construnter(){
+          super();
+        }
+        render(){
+          return (
+            <div className="container">
           <ul>
             <Counter color="tomato"/>
             <Counter color="skyblue"/>
             <Counter color="limegreen"/>
           </ul>
+          <div>TOTAL INVENTORY: 3</div>
         </div>,
+          );
+        }
+      }
+
+      ReactDOM.render(
+        // <div className="container">
+        //   <ul>
+        //     <Counter color="tomato"/>
+        //     <Counter color="skyblue"/>
+        //     <Counter color="limegreen"/>
+        //   </ul>
+        //   <div>TOTAL INVENTORY: 3</div>
+        // </div>,
+        <App/>
         document.getElementById('root')
       );
     })();
