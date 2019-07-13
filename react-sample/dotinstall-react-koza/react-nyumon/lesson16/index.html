@@ -21,6 +21,22 @@
         );
       }
 
+      function CounterList(props) {
+        const x = props.counters.map(y => {
+          return (
+            <Counter
+              counter={y}
+              key={y.id}
+            />
+          );
+        });
+        return (
+          <ul>
+            {x}
+          </ul>
+        );
+      }
+
       class App extends React.Component {
         constructor() {
           super();
@@ -35,11 +51,7 @@
         render() {
           return (
             <div className="container">
-              <ul>
-                <Counter counter={this.state.counters[0]}/>
-                <Counter counter={this.state.counters[1]}/>
-                <Counter counter={this.state.counters[2]}/>
-              </ul>
+              <CounterList counters={this.state.counters}/>
               <div>TOTAL INVENTORY: 3</div>
             </div>
           );
