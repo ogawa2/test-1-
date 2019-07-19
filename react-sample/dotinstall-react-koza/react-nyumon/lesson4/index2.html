@@ -27,7 +27,7 @@ render() {
   const { valueA, valueB } = this.state;
   const sum = parseInt(valueA) + parseInt(valueB);
   return (<div>
-    <input type="text" defaultValue={valueA} onInput={(k) => {
+    <input type="text" defaultValue={valueA} onInput={(e) => {
       this.setState({
         valueA: e.target.value
       });
