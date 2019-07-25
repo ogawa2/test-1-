@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>React Todo App</title>
+    <link rel="styleseet" href="css/styles.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    (() => {
+        const todos = [
+            {id: 0, title: 'Task 0', isDone: false},
+            {id: 1, title: 'Task 1', isDone: false},
+            {id: 2, title: 'Task 2', isDone: true},
+        ];
+
+        function TodoItem(props){
+            return(
+              <li key={props.p2.id}>
+              <label>
+              <input type="checkbox"
+                checked={props.p2.isDone}
+                onCange={() => props.checkTodo(props.todo)}
+              />
+              {props.p2.title}
+              </label>
+              </li>
+            );
+        }
+
+        function TodoList(props){
+            const todos2 = props.p1.map(x => {
+                return(
+                    <TodoItem
+                      key={x.id}
+                      p2={x}
+                      checkTodo={props.checkTodo}
+                    />
+                );
+            });
+            return (
+                <ul>
+                {todos2}
+                </ul>
+            );
+        }
+
+        class App extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    k1: todos
+                };
+                this.checkTodo = this.checkTodo.bind(this);
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>私のTodo</h1>
+                        <TodoList
+                           p1={this.state.k1}
+                           checkTodo={this.checkTodo}
+                           />
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(
+            <App/>,
+            document.getElementById('root')
+        )
+    })();
+    </script>
+</body>
+</html>

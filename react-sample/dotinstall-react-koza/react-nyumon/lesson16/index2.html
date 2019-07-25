@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>React Todo App</title>
+  <title>React Practice</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -12,32 +12,27 @@
   <div id="root"></div>
   <script type="text/babel">
     (() => {
-      const todos = [
-        {id: 0, title: 'Task 0', isDone: false},
-        {id: 1, title: 'Task 1', isDone: false},
-        {id: 2, title: 'Task 2', isDone: true}
-      ];
 
-      function TodoItem(props) {
+      function Counter(props) {
         return (
-          <li key={props.todo.id}>
-            {props.todo.title}
+          <li style={{backgroundColor:props.p2.color}}>
+            {props.p2.id}:{props.p2.count}
           </li>
         );
       }
 
-      function TodoList(props) {
-        const todos = props.todos.map(todo => {
+      function CounterList(props) {
+        const x = props.p1.map(y => {
           return (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
+            <Counter
+              p2={y}
+              key={y.id}
             />
           );
         });
         return (
           <ul>
-            {todos}
+            {x}
           </ul>
         );
       }
@@ -46,15 +41,18 @@
         constructor() {
           super();
           this.state = {
-            todos: todos
+           k1: [
+              {id: 'A', count: 0, color: 'tomato'},
+              {id: 'B', count: 0, color: 'skyblue'},
+              {id: 'C', count: 0, color: 'limegreen'}
+            ]
           };
         }
-
         render() {
           return (
-            <div>
-              <h1>My Todos</h1>
-              <TodoList todos={this.state.todos}/>
+            <div className="container">
+              <CounterList p1={this.state.k1}/>
+              <div>TOTAL INVENTORY: 3</div>
             </div>
           );
         }

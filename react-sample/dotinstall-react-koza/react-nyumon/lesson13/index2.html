@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>React Practice</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    (() => {
+
+      class Counter extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            count: 0
+          };
+          this.countUp = this.countUp.bind(this);
+        }
+        countUp() {
+          // this.state.count = this.state.count + 1;
+          // this.setState({
+          //   count: this.state.count + 1
+          // });
+          this.setState(prevState => {
+            return {
+              count: prevState.count + 1
+            };
+          });
+        }
+        render() {
+          return (
+            <li style={{backgroundColor:this.props.color}} onClick={this.countUp}>
+              {this.state.count}
+            </li>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <div className="container">
+          <ul>
+            <Counter color="tomato"/>
+            <Counter color="skyblue"/>
+            <Counter color="limegreen"/>
+          </ul>
+        </div>,
+        document.getElementById('root')
+      );
+    })();
+  </script>
+</body>
+</html>

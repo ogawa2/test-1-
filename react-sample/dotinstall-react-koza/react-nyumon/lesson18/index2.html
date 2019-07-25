@@ -15,7 +15,8 @@
 
       function Counter(props) {   //渡されてきた配列の一つ一つの要素を使ってリストを一つ作る
         return (
-          <li style={{backgroundColor:props.counter.color}}>
+          <li style={{backgroundColor:props.counter.color}} onClick={() => 
+          props.countUp(props.counter)}>
             {props.counter.id}:{props.counter.count}
           </li>
         );
@@ -27,6 +28,7 @@
             <Counter
               counter={y}
               key={y.id}
+              countUp={props.countUp}
             />
           );
         });
@@ -47,11 +49,30 @@
               {id: 'C', count: 0, color: 'limegreen'}
             ]
           };
+          this.countUp = this.countUp.bind(this);
         }
+        countUp(counter) {
+          this.setState(prevState => {
+              const c = prevState.counters.map(x => {
+                return{id: x.id, count: x.count, color: x.color};
+              });
+              const pos = c.map(x2 => {
+                return x2.id;
+              }).indexOf(counter.id);
+              c[pos].count++;
+              return{
+                counters: c
+              };
+          });
+        }
+        
         render() {
           return (
             <div className="container">
-              <CounterList counters={this.state.counters}/>
+              <CounterList
+                 counters={this.state.counters}
+                 countUp={this.countUp}
+                 />
               <div>TOTAL INVENTORY: 3</div>
             </div>
           );

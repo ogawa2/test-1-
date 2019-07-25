@@ -13,31 +13,32 @@
   <script type="text/babel">
     (() => {
 
-      function Counter(props) {   //渡されてきた配列の一つ一つの要素を使ってリストを一つ作る
+      function Counter(props) {
         return (
-          <li style={{backgroundColor:props.counter.color}}>
+          <li style={{backgroundColor:props.counter.color}} onClick={() => props.countUp(props.counter)}>
             {props.counter.id}:{props.counter.count}
           </li>
         );
       }
 
-      function CounterList(props) { //渡された配列の要素一つ一つをCounterコンポーネントに組み替え、組み替えた配列を<ul>タグで挟んで表示する。Counterコンポーネントには一つ一つの配列の要素をcounterプロパティとして、配列の一つ一つの要素内のidをkeyプロパティとして渡す。
-        const x = props.counters.map(y =>{
+      function CounterList(props) {
+        const counters = props.counters.map(counter => {
           return (
             <Counter
-              counter={y}
-              key={y.id}
+              counter={counter}
+              key={counter.id}
+              countUp={props.countUp}
             />
           );
         });
         return (
           <ul>
-            {x}
+            {counters}
           </ul>
         );
       }
 
-      class App extends React.Component {　// countersのstateを設定。contaiherクラスのdivで挟んだCounterListコンポーネントを表示する。CounterListコンポーネントにはstateのcountersの配列をcountersプロパティとして渡す。
+      class App extends React.Component {
         constructor() {
           super();
           this.state = {
@@ -45,20 +46,40 @@
               {id: 'A', count: 0, color: 'tomato'},
               {id: 'B', count: 0, color: 'skyblue'},
               {id: 'C', count: 0, color: 'limegreen'}
-            ]
+            ],
+            total: 0
           };
+          this.countUp = this.countUp.bind(this);
+        }
+        countUp(counter) {
+          this.setState(prevState => {
+            const counters = prevState.counters.map(counter => {
+              return {id: counter.id, count: counter.count, color: counter.color};
+            });
+            const pos = counters.map(counter => {
+              return counter.id;
+            }).indexOf(counter.id);
+            counters[pos].count++;
+            return {
+              counters: counters,
+              total: prevState.total++
+            };
+          });
         }
         render() {
           return (
             <div className="container">
-              <CounterList counters={this.state.counters}/>
-              <div>TOTAL INVENTORY: 3</div>
+              <CounterList
+                counters={this.state.counters}
+                countUp={this.countUp}
+              />
+              <div>TOTAL INVENTORY: {this.state.total}</div>
             </div>
           );
         }
       }
 
-      ReactDOM.render( //Appコンポーネントを表示する
+      ReactDOM.render(
         <App/>,
         document.getElementById('root')
       );
