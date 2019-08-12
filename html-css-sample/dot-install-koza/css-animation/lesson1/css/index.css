@@ -1,0 +1,46 @@
+.box {
+    width:40px;
+    height: 40px;
+    background-color: skyblue;
+    cursor: pointer;
+    /* opacity: 1; */
+    /* transition-property: transform opacity;
+    transition-duration: 0.4s; */
+    /* transition: transform .4s opacity .4s; */
+    /* transition: all .4s; */
+     transition: 2s;
+    /* transition-timing-function: ease; */ */
+
+}
+
+.box.moved {
+    /* transform: translate(400px, 0); */
+    animation-name: spin;
+    animation-duration: 2s;
+    /* animation-iteration-count: infinite; */
+    transition-timing-function: ease-in-out;
+    /* animation-direction: alternate; */
+    animation-fill-mode: forwards;
+}
+@keyframes spin {
+    0% { transform: none;}
+    50% {transform: rotate(270deg) scale(0.8); }
+    80% {transform: rotate(320deg) scale(1.8);}
+    100% {transform: rotate(360deg) scale(0.2) translateY(200px);}
+    }
+/* .box2 {
+    transition-timing-function: cubic-bezier(0.13, 3.46, 1, 1);
+}
+.box3 {
+    transition-timing-function: ease-in-out;
+    height: 180px;
+    background: #333;
+} */
+
+.box:hover {
+    /* transform: translate(20px, 10px); */
+    transform: rotate(45deg);
+    /* transform: scale(1.5) rotate(45deg);
+    transform-origin: left top; */
+    opacity: 0.3;
+}

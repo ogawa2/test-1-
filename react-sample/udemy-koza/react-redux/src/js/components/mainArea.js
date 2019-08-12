@@ -7,10 +7,6 @@ export default class MainArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [
-        {label:"Todo1"},
-        {label:"Todo2"},
-       ],
       todoInputValue: ""
     }
   }
@@ -20,21 +16,29 @@ export default class MainArea extends React.Component {
   }
 
   onClickAddButton(event) {
-    let addItem = {label:this.state.todoInputValue}
-    let todos = this.state.todos.slice();
-    todos.push(addItem);
+    this.setState({todoInputValue: ""});
+    this.props.onAddTodo(this.state.todoInputValue);
+  }
 
-    this.setState({
-      todos: todos,
-      todoInputValue:""
-    });
+  onCompleteTodo(id) {
+    this.props.onCompleteTodo(id);
+  } 
+
+  onDeleteTodo(id){
+    this.props.onDeleteTodo(id);
   }
 
   renderTodoItems() {
     let todoItemDom = [];
-    for (let i = 0; i < this.state.todos.length; i++) {
-       let todoItem = <ListItem data={this.state.todos[i]} key={"item-"+i}/>
+    for (let i = 0; i < this.props.todoList.length; i++) {
+     if(!this.props.todoList[i].completed) {
+       let todoItem = <ListItem
+                         data={this.props.todoList[i]}
+                         key={"item-"+i}
+                         CompleteTodo={this.onCompleteTodo.bind(this)}
+                         deleteTodo={this.onDeleteTodo.bind(this)}/>
        todoItemDom.push(todoItem);
+       }
     }
     return todoItemDom;
   }

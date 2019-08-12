@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="box"></div>
+    <!-- <div class="box box2"></div>
+    <div class="box box3"></div> -->
+<script>
+    (() => {
+        'use strict';
+        // const ad = document.querySelectorAll('.box');
+        // console.log(ad[1]);
+        document.querySelector('body').addEventListener('click', () => {
+            document.querySelectorAll('.box').forEach((box) => {
+                box.classList.add('moved');
+            })
+        });
+    })();
+</script>
+</body>
+</html>
