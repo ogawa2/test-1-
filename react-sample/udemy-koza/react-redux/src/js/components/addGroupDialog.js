@@ -5,7 +5,8 @@ export default class AddGroupDialog extends React.Component {
         this.props.onCancel();
     }
     onSave(event) {
-        this.props.onSave();
+        let groupNameInput = this.refs.groupName; //document.getElementById的なやつ
+        this.props.onSave(groupNameInput.value);
     }
     render() {
       if (this.props.show) {
@@ -16,6 +17,7 @@ export default class AddGroupDialog extends React.Component {
                     <div className="dialog-content">
                         グループ名:
                         <input
+                            ref="groupName"
                             type="text"
                             name="groupName"
                             className="group-text-input"/>
