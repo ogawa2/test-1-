@@ -112,7 +112,7 @@ export default class App extends React.Component {
       } 
       
     }
-    delete this.state.todoList[id];
+    // delete this.state.todoList[id];
     this.setState(_state);
     
 
