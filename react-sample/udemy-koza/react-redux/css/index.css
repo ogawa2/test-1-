@@ -171,3 +171,13 @@ li {
       cursor: pointer;
       font-size: 0.8rem;
       color: #FFFFFF; }
+    .dialog .dialog-footer .delete-button {
+      float: right;
+      width: 80px;
+      height: 30px;
+      border-radius: 5px;
+      border: 0;
+      background: #EEEEEE;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-right: 10px; }
