@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app';
+<<<<<<< HEAD
 import configureStore from './store/index';
 
 const store = configureStore();
@@ -28,3 +29,10 @@ const render = () => {
 
 render();
 store.subscribe(render);
+=======
+
+ReactDOM.render(
+  <App />,
+   document.getElementById('root')
+ );
+>>>>>>> 192de3d43dcc7736950f1ed1688336e0006fea7d
