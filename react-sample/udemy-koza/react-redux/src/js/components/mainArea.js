@@ -47,8 +47,7 @@ export default class MainArea extends React.Component {
   render() {
      return (
        <div className="main-area">
-         <Header
-          groupName={this.props.groupName}/>
+         <Header />
          <main className="list-area">
             <div className='todo-input-area'>
               <input type="text"
@@ -56,7 +55,6 @@ export default class MainArea extends React.Component {
                      placeholder="todoを追加"
                      value={this.state.todoInputValue}
                      onChange={this.onChangeTodoInput.bind(this)}/>
-                    {/* // onChange={() => {this.props.onChange(event.target.value)}}/> */}
               <button 
                      className="add-button"
                      onClick={this.onClickAddButton.bind(this)}>登録</button>
