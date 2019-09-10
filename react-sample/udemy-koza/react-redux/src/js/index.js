@@ -1,30 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './components/app';
 import configureStore from './store/index';
 
 const store = configureStore();
 
-const onChange = (text) => {
-  const action = {
-    type: "CHANGE_TEXT",
-    text: text
-  }
-  store.dispatch(action);//reducerにactionを渡すことができる
-}
+ReactDOM.render(
+  <Provider store={store}>
+  <App/>,
+  </Provider>,
+  document.getElementById('root')
+);
+// }
 
-
-const render = () => {
-  const state = store.getState();
-
-  ReactDOM.render(
-    // <MainArea 
-    //   text={state.text}
-    //   onChange={onChange}/>,
-    <App/>,
-    document.getElementById('root')
-  );
-}
-
-render();
-store.subscribe(render);
+// render();
+// store.subscribe(render);
